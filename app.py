@@ -29,14 +29,29 @@ registroVeiculo = [
 ]
 #print(registroVeiculo[0][2])
 
-for elemento in registroVeiculo:
-    if(elemento[4] == "comum" ):
-        pctExcesso = (float(elemento[2]) - float(elemento[3])) / float(elemento[3]) * 100
-        print(f"Placa: {elemento[1]}, Porcentagem de Excesso: {pctExcesso:.2f}%")
-print("\n")
+# for elemento in registroVeiculo:
+#     if(elemento[4] == "comum" ):
+#         pctExcesso = (float(elemento[2]) - float(elemento[3])) / float(elemento[3]) * 100
+#         print(f"Placa: {elemento[1]}, Porcentagem de Excesso: {pctExcesso:.2f}%")
+# print("\n")
 
-print(registroVeiculo.__len__())
-print(type(registroVeiculo))
+# print(registroVeiculo.__len__())
+# print(type(registroVeiculo))
+
+
+
+for i in range(0,len(registroVeiculo)):
+ velApurada = registroVeiculo[i][2]
+ velPermitida= registroVeiculo[i][3]
+ placa = registroVeiculo[i][1]
+codRadar = registroVeiculo[i][0]
+tipoveiculo = registroVeiculo[i][4]
+pctExcessos = (float(velApurada[2]) - float(velPermitida[3])) / float(velPermitida[3]) * 100
+
+if(tipoveiculo[i][4] == "comum" ) and\
+    (pctExcessos > 0) :
+    #       ((velPermitida<= 100 )) and (velApurada>(velPermitida+7))    
+    print(f"{placa}  -  {pctExcessos :.2f}  -  {codRadar}")
 #pctExcesso = (float(registroVeiculo[0][2]) - float(registroVeiculo[0][3]))/float(registroVeiculo[0][3]) * 100
 
 #print("PLACA   -PCT   -RADAR")
